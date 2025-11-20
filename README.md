@@ -1,2 +1,57 @@
-# NYC-ML-Project
-My goal in this notebook is to try to deal with **real world data**, analyze it and draw valuable conclusions. 
+# NYC Parking Violations Project
+
+## Overview
+This project analyzes NYC parking violations data (Fiscal Year 2015) to understand violation patterns and predict fine categories based on vehicle and violation characteristics. The original Jupyter Notebook has been refactored into a modular Python project for better maintainability and scalability.
+
+## Project Structure
+```
+.
+├── run.py                  # Main entry point
+├── requirements.txt        # Project dependencies
+├── src/
+│   ├── data_loader.py      # Data loading logic
+│   ├── preprocessing.py    # Cleaning and feature engineering
+│   ├── eda.py              # Exploratory Data Analysis
+│   └── modeling.py         # XGBoost model training and evaluation
+├── pipelines/
+│   └── training_pipeline.py # Orchestration of the workflow
+└── plots/                  # Generated EDA visualizations
+```
+
+## Data Source
+
+The project requires the **NYC Parking Violations Issued - Fiscal Year 2015** dataset. You can download it from Kaggle:
+
+[NYC Parking Tickets on Kaggle](https://www.kaggle.com/datasets/new-york-city/nyc-parking-tickets)
+
+Please download the `Parking_Violations_Issued_-_Fiscal_Year_2015.csv` file and place it in a directory accessible to the script (`/archive`).
+
+## Installation
+
+1.  **Prerequisites**: Ensure you have Python 3.8+ installed.
+2.  **Install Dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## Usage
+
+Run the entire pipeline (Data Loading -> Preprocessing -> EDA -> Modeling):
+```bash
+python3 run.py
+```
+
+### Options
+- **Skip EDA** (faster execution):
+  ```bash
+  python3 run.py --no-eda
+  ```
+- **Enable Hyperparameter Tuning** (GridSearchCV):
+  ```bash
+  python3 run.py --tune
+  ```
+- **Specify Custom Paths**:
+  ```bash
+  python3 run.py --violations path/to/file.csv --codes path/to/codes.csv
+  ```
+
