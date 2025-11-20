@@ -48,15 +48,14 @@ def create_pipeline(num_cols, cat_cols):
     preprocessor = ColumnTransformer(
         transformers=[
             ('num', 'passthrough', num_cols),
-            ('cat', OneHotEncoder(handle_unknown='ignore'), cat_cols)
+            ('cat', OneHotEncoder(handle_unknown='ignore', sparse_output=True), cat_cols)
         ])
     
     pipeline = Pipeline(steps=[
         ('preprocessor', preprocessor),
         ('classifier', XGBClassifier(
             objective='multi:softprob',
-            eval_metric='mlogloss',
-            use_label_encoder=False,
+            n_jobs=-1,
             random_state=42,
             tree_method='hist' # Faster training
         ))
@@ -64,14 +63,26 @@ def create_pipeline(num_cols, cat_cols):
     
     return pipeline
 
-def train_model(df, target_col='Fine_Category', test_size=0.3, tune_hyperparameters=False):
+def train_model(df, target_col='Fine_Category', test_size=0.3, tune_hyperparameters=False, max_samples=None):
     """
     Trains the model. Optionally performs GridSearchCV.
+    
+    Args:
+        df: Input dataframe
+        target_col: Target column name
+        test_size: Test set proportion
+        tune_hyperparameters: Whether to perform GridSearchCV
+        max_samples: If specified, randomly sample this many rows for faster training
     """
     num_cols, cat_cols = get_feature_columns(df, target_col)
     
     # Drop rows with missing target
     df = df.dropna(subset=[target_col])
+    
+    # Sample data if max_samples is specified
+    if max_samples is not None and len(df) > max_samples:
+        print(f"Sampling {max_samples} rows from {len(df)} total rows for faster training...")
+        df = df.sample(n=max_samples, random_state=42)
     
     X = df[num_cols + cat_cols]
     y = df[target_col]
@@ -87,11 +98,14 @@ def train_model(df, target_col='Fine_Category', test_size=0.3, tune_hyperparamet
     if tune_hyperparameters:
         # Reduced param grid for speed in this refactoring demo
         param_grid = {
-            'classifier__n_estimators': [100, 200],
-            'classifier__max_depth': [6, 8],
-            'classifier__learning_rate': [0.1]
+            'classifier__max_depth': [6, 8, 10],
+            'classifier__learning_rate': [0.05],
+            'classifier__n_estimators': [800],
+            'classifier__subsample': [0.8],
+            'classifier__colsample_bytree': [0.8, 0.9],
+            'classifier__min_child_weight': [1, 3]
         }
-        grid_search = GridSearchCV(pipeline, param_grid, cv=3, scoring='f1_macro', n_jobs=-1, verbose=1)
+        grid_search = GridSearchCV(pipeline, param_grid, cv=3, scoring='f1_macro', n_jobs=-1, verbose=2)
         grid_search.fit(X_train, y_train)
         model = grid_search.best_estimator_
         print(f"Best parameters: {grid_search.best_params_}")

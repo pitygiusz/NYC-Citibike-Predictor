@@ -29,7 +29,12 @@ def run_training_pipeline(violations_path, codes_path, output_dir='plots', run_e
     # 3. Modeling
     print("Step 3: Training Model...")
     # Note: train_model handles splitting and encoding
-    model, X_test, y_test, label_encoder = train_model(df, target_col='Fine_Category', tune_hyperparameters=tune_hyperparameters)
+    model, X_test, y_test, label_encoder = train_model(
+        df, 
+        target_col='Fine_Category', 
+        tune_hyperparameters=tune_hyperparameters, 
+        max_samples=100000 if tune_hyperparameters else None
+    )
     print("Model training completed.")
     
     # 4. Evaluation
