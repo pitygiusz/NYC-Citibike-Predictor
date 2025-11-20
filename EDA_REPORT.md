@@ -10,7 +10,7 @@ This report summarizes the findings from the Exploratory Data Analysis (EDA) of 
 - **Pennsylvania (PA)** follows with around **2.5%**.
 - The top 10 states are dominated by nearby states in the Northeast region.
 
-![Top 10 States](/Users/piotrjurczyk/Documents/Projekty/NYC/plots/top_10_states.png)
+![Top 10 States](plots/top_10_states.png)
 
 ## 2. Top Violation Codes
 
@@ -20,7 +20,7 @@ This report summarizes the findings from the Exploratory Data Analysis (EDA) of 
 - **Violation Code 14 (No Standing - Day/Time Limits)** is third (~8.4%).
 - The top 3 violation codes account for over **34%** of all violations, indicating that a few specific types of infractions drive a large portion of the fines.
 
-![Top 10 Violation Codes](/Users/piotrjurczyk/Documents/Projekty/NYC/plots/top_10_violation_codes.png)
+![Top 10 Violation Codes](plots/top_10_violation_codes.png)
 
 ## 3. Temporal Patterns
 
@@ -30,14 +30,14 @@ This report summarizes the findings from the Exploratory Data Analysis (EDA) of 
 - **Thursday and Friday** tend to have slightly higher violation counts.
 - **Sunday** has the lowest number of violations, likely due to relaxed parking regulations (e.g., no street cleaning) and lower traffic enforcement activity.
 
-![Violations by Day](/Users/piotrjurczyk/Documents/Projekty/NYC/plots/violations_by_day.png)
+![Violations by Day](plots/violations_by_day.png)
 
 ### Month
 **Insight:**
 - Violation counts fluctuate throughout the year.
 - (Refer to the plot below for specific monthly trends observed in the 2015 fiscal year data).
 
-![Violations by Month](/Users/piotrjurczyk/Documents/Projekty/NYC/plots/violations_by_month.png)
+![Violations by Month](plots/violations_by_month.png)
 
 ## 4. Vehicle Characteristics
 
@@ -46,7 +46,7 @@ This report summarizes the findings from the Exploratory Data Analysis (EDA) of 
 - **Ford** is the most frequently cited vehicle make (~13%), followed by **Toyota** (~10%) and **Honda** (~9%).
 - This likely reflects the popularity of these brands in the NYC area rather than a specific tendency of these drivers to commit violations.
 
-![Top 10 Vehicle Makes](/Users/piotrjurczyk/Documents/Projekty/NYC/plots/top_10_vehicle_makes.png)
+![Top 10 Vehicle Makes](plots/top_10_vehicle_makes.png)
 
 ## 5. Location Analysis
 
@@ -55,7 +55,7 @@ This report summarizes the findings from the Exploratory Data Analysis (EDA) of 
 - **Broadway** has the highest number of violations, which is consistent with it being a major and long thoroughfare in NYC.
 - Other major avenues like **3rd Ave**, **5th Ave**, and **Madison Ave** also feature prominently in the top 10.
 
-![Top 10 Streets](/Users/piotrjurczyk/Documents/Projekty/NYC/plots/top_10_streets.png)
+![Top 10 Streets](plots/top_10_streets.png)
 
 ## 6. NY vs. Non-NY Registered Vehicles
 
@@ -66,7 +66,7 @@ This report summarizes the findings from the Exploratory Data Analysis (EDA) of 
 - **Violation 14 (No Standing)** is more frequently issued to Non-NY vehicles.
 - Statistical testing (Chi-square) confirms a significant association between registration state (NY vs Non-NY) and the type of violation.
 
-![NY vs Non-NY Violations](/Users/piotrjurczyk/Documents/Projekty/NYC/plots/ny_vs_non_ny.png)
+![NY vs Non-NY Violations](plots/ny_vs_non_ny.png)
 
 ## 7. Vehicle Age Analysis
 

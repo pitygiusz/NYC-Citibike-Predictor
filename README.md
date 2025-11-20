@@ -24,7 +24,7 @@ The project requires the **NYC Parking Violations Issued - Fiscal Year 2015** da
 
 [NYC Parking Tickets on Kaggle](https://www.kaggle.com/datasets/new-york-city/nyc-parking-tickets)
 
-Please download the `Parking_Violations_Issued_-_Fiscal_Year_2015.csv` file and place it in a directory accessible to the script (`/archive`).
+Please download the `Parking_Violations_Issued_-_Fiscal_Year_2015.csv` file and place it in the `archive` directory.
 
 ## Installation
 
@@ -50,8 +50,5 @@ python3 run.py
   ```bash
   python3 run.py --tune
   ```
-- **Specify Custom Paths**:
-  ```bash
-  python3 run.py --violations path/to/file.csv --codes path/to/codes.csv
-  ```
+
 
