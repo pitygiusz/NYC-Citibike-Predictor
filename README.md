@@ -54,4 +54,13 @@ python3 run.py
 ## Analysis report
 The analysis report can be found in the `EDA_REPORT.md` file. 
 
+### Technologies used
+- Jupyter Notebook
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- XGBoost
 
+The project was compleated individually.
