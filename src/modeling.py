@@ -23,11 +23,7 @@ def get_feature_columns(df, target_col='Fine_Category'):
                     'Latitude', 'Longitude', 'Community Board', 'Community Council ', 'Census Tract',
                     'BIN', 'BBL', 'NTA', 'VIOLATION CODE', 'VIOLATION DESCRIPTION', 'ticket_year', 'vehicle_age', 'age_group']
     
-    # In the notebook, they selected specific columns. Let's try to match or use a robust selection.
-    # Notebook used:
-    # num_cols = ['Vehicle Year', 'Hour_sin', 'Hour_cos', 'Vehicle Expiration_year', 'Vehicle Expiration_month', 'Vehicle Expiration_day', 'Issue Date_year', 'Issue Date_month', 'Issue Date_day']
-    # cat_cols = ['Registration State', 'Plate Type', 'Vehicle Body Type', 'Vehicle Make', 'Violation County', 'Violation In Front Of Or Opposite']
-    
+
     num_cols = ['Vehicle Year', 'Hour_sin', 'Hour_cos', 'Vehicle Expiration_year', 
                 'Vehicle Expiration_month', 'Vehicle Expiration_day', 'Issue Date_year', 
                 'Issue Date_month', 'Issue Date_day']
