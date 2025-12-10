@@ -1,0 +1,20 @@
+# PyTorch dependencies for NYC Parking Fines Neural Network Models
+# Install with: pip install -r requirements_pytorch.txt
+
+# Core deep learning framework
+# Using torch>=2.6.0 to address security vulnerabilities (CVE-2024-31583, CVE-2024-31580)
+torch>=2.6.0
+torchvision>=0.19.0
+
+# Data processing and analysis
+pandas>=1.5.0
+numpy>=1.23.0
+scikit-learn>=1.2.0
+
+# Visualization (optional, for plotting training curves)
+matplotlib>=3.6.0
+seaborn>=0.12.0
+
+# Data loading (for CSV files)
+# Using pyarrow>=14.0.1 to address security vulnerability (CVE-2023-47248)
+pyarrow>=14.0.1
