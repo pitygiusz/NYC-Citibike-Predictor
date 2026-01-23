@@ -5,7 +5,7 @@ This part of the **NYC-ML-Project** focuses on the **NYC Parking Fines** dataset
 ## Goal
 The goal was to analyze NYC parking violations data to understand violation patterns and predict fine categories based on vehicle and violation characteristics.
 
-## 🛠 Technologies Used
+## Technologies Used
 - Python (Pandas, NumPy, Scikit-Learn , XGBoost)
 - Matplotlib / Seaborn
 - Jupyter Notebook
