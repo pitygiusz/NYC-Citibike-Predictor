@@ -1,4 +1,4 @@
-# NYC-ML-Project
+# NYC-Urban-Analysis
 
 ## Project Overview
 A data science project focused on NYC urban infrastructure, processing 30M+ records of real world data. It features a production-ready demand forecaster for Citibike and a deep dive into statistical analysis of NYC Parking Violations, emphasizing high-performance data processing and model accuracy.
