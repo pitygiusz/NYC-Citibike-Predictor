@@ -16,7 +16,7 @@ except Exception as e:
     model = None
 
 try:
-    history_df = pd.read_csv('data/daily_aggregated.csv')
+    history_df = pd.read_csv('daily_aggregated.csv')
     history_df['date'] = pd.to_datetime(history_df['date'])
     print("History data loaded.")
 except Exception as e:

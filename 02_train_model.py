@@ -101,7 +101,7 @@ def main():
     )
     
 
-    daily.write_csv('data/daily_aggregated.csv') # Save aggregated data
+    daily.write_csv('app/daily_aggregated.csv') # Save aggregated data
 
     print("Training Random Forest...")
     
