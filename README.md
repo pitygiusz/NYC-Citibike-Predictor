@@ -1,6 +1,6 @@
 # NYC-CitiBike-Predictor
 
-This is a production-ready demand forecaster for the NYC Citi Bike network, developed as a full-stack web application.
+This is a basic demand forecaster for the NYC Citi Bike network, developed as a full-stack web application.
 
 **Live Demo:** [Citibike AI](https://citibike-usage-ai.onrender.com/)
 
