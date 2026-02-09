@@ -10,30 +10,27 @@ The primary challenge of this project was to engineer a pipeline for large-scale
 
 ## Key Features
 
-- Big Data Engine: Processed 30M+ rows (7GB raw CSV) by converting to Parquet format and utilizing Polars for memory-efficient manipulation.
+- **Big Data:** Processed 30M+ rows (7GB raw CSV) by converting to Parquet format and utilizing Polars for memory-efficient manipulation.
 
-- EDA: Using vectorized operations to perform complex calculations across millions of rows in seconds.
+- **Aggregating Data** Using vectorized operations to perform calculations across millions of rows.
 
-- Machine Learning: Trained a Random Forest Regressor to estimate trip volume.
+- **Machine Learning:** Trained a Random Forest Regressor to estimate trip volume.
 
-- Feature Engineering: Cyclical encoding (Sine/Cosine) for temporal features (Month, Day of Week).
+- **Production:** Lightweight Streamlit application integrated with the Open-Meteo API for live weather data.
 
-- Haversine distance calculations for ride intensity analysis.
-
-- Production: Lightweight Streamlit application integrated with the Open-Meteo API for live weather data.
-
-- Historical Data Analysis: Interactive visualizations of 2023 bike usage patterns, including weather impact analysis and temporal trends.
+- **Historical Data Analysis:** Interactive visualizations of 2023 bike usage patterns, including weather impact analysis and temporal trends.
 
 
 ## Project Structure
 ```
 NYC-CitiBike/
-├── 01_prepare_data.py        # ETL pipeline
-├── 02_train_model.py         # Data aggregation and model training
-├── 03_test_model.py          # Model validation
 ├── app.py                    # Streamlit web application
 ├── tools.py                  # Helper functions for the app
 ├── requirements.txt          # Python dependencies
+├── src/
+│   ├── 01_prepare_data.py    # ETL pipeline
+│   ├── 02_train_model.py     # Data aggregation and model training
+│   └── 03_test_model.py      # Model validation
 └── resources/
     ├── daily_aggregated.csv  # Aggregated daily data
     └── random_forest.pkl     # Trained model
@@ -55,13 +52,13 @@ pip install -r requirements.txt
 3. (Optional) Run the full pipeline (first download data from [citibike.com](https://citibikenyc.com/system-data))
 ```bash
 # Step 1: Prepare the data
-python 01_prepare_data.py
+python src/01_prepare_data.py
 
 # Step 2: Train the model
-python 02_train_model.py
+python src/02_train_model.py
 
 # Step 3: Test the model
-python 03_test_model.py
+python src/03_test_model.py
 ```
 
 4. Run the application:

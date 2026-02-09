@@ -5,7 +5,7 @@ import polars as pl
 import shutil
 import time
 
-DATA_FOLDER = "data/2023-citibike-tripdata"
+DATA_FOLDER = "../data/2023-citibike-tripdata"
 
 def ETL_pipeline():
     

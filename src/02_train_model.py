@@ -7,8 +7,8 @@ import time
 from sklearn.model_selection import train_test_split
 
 
-DATA_PATH_PATTERN = "data/2023-citibike-tripdata/*.parquet" #Path to Parquet files
-WEATHER_PATH = "resources/2023_weather.csv" #Path to weather data
+DATA_PATH_PATTERN = "../data/2023-citibike-tripdata/*.parquet" #Path to Parquet files
+WEATHER_PATH = "../resources/2023_weather.csv" #Path to weather data
 
 def haversine_expr(lat1_col, lon1_col, lat2_col, lon2_col):
     R = 6371
@@ -101,7 +101,7 @@ def main():
     )
     
 
-    daily.write_csv('resources/daily_aggregated.csv') # Save aggregated data
+    daily.write_csv('../resources/daily_aggregated.csv') # Save aggregated data
 
     print("Training Random Forest...")
     
@@ -123,7 +123,7 @@ def main():
 
     print("Random Forest Model Training Pipeline Completed.")
 
-    joblib.dump(model, 'resources/random_forest.pkl') # Save the trained model
+    joblib.dump(model, '../resources/random_forest.pkl') # Save the trained model
     print(f"Pipeline completed in {time.time() - start_total:.2f} seconds.")
 
 if __name__ == "__main__":
