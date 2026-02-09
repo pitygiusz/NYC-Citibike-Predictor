@@ -1,4 +1,4 @@
-# NYC-CitiBike-Predictor
+# NYC-CitiBike
 
 This is a basic demand forecaster and historical data analysis for the NYC Citi Bike network, developed as a streamlit web application.
 
@@ -27,7 +27,7 @@ The primary challenge of this project was to engineer a pipeline for large-scale
 
 ## Project Structure
 ```
-NYC-ML-Project/
+NYC-CitiBike/
 ├── 01_prepare_data.py        # ETL pipeline
 ├── 02_train_model.py         # Data aggregation and model training
 ├── 03_test_model.py          # Model validation
